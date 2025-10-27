@@ -13,9 +13,14 @@ export class ConsentComponent {
   @Input() textSuffix: string = '';
   @Input() checked: boolean = false;
   @Output() consentChange = new EventEmitter<boolean>();
+  @Output() biometricTextClick = new EventEmitter<void>();
 
   onConsentChange(event: Event): void {
     const target = event.target as HTMLInputElement;
     this.consentChange.emit(target.checked);
+  }
+
+  onBiometricTextClick(): void {
+    this.biometricTextClick.emit();
   }
 }

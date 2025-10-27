@@ -13,6 +13,7 @@ import { NavigationComponent } from '../../components/navigation/navigation.comp
 import { TitleSectionComponent } from '../../components/title-section/title-section.component';
 import { InstructionsComponent } from '../../components/instructions/instructions.component';
 import { ConsentComponent } from '../../components/consent/consent.component';
+import { BiometricModalComponent } from '../../components/biometric-modal/biometric-modal.component';
 import { InstructionItem } from '../../../../shared/interfaces/identity.interfaces';
 
 @Component({
@@ -23,6 +24,7 @@ import { InstructionItem } from '../../../../shared/interfaces/identity.interfac
     TitleSectionComponent,
     InstructionsComponent,
     ConsentComponent,
+    BiometricModalComponent,
   ],
   templateUrl: './onboarding.page.html',
   styleUrl: './onboarding.page.scss',
@@ -30,6 +32,7 @@ import { InstructionItem } from '../../../../shared/interfaces/identity.interfac
 })
 export class OnboardingPageComponent extends BaseComponent implements OnInit {
   biometricConsent = false;
+  isBiometricModalOpen = false;
 
   private readonly textService = inject(TextService);
   private readonly identityStore = inject(IdentityStoreService);
@@ -101,5 +104,26 @@ export class OnboardingPageComponent extends BaseComponent implements OnInit {
    */
   goBack(): void {
     this.router.navigate(['/']);
+  }
+
+  /**
+   * Handles biometric text click to open modal
+   */
+  onBiometricTextClick(): void {
+    this.isBiometricModalOpen = true;
+  }
+
+  /**
+   * Handles biometric modal close
+   */
+  onBiometricModalClose(): void {
+    this.isBiometricModalOpen = false;
+  }
+
+  /**
+   * Handles biometric modal agree
+   */
+  onBiometricModalAgree(): void {
+    this.isBiometricModalOpen = false;
   }
 }

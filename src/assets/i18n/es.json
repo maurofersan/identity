@@ -16,6 +16,52 @@
         "highlight": "datos biométricos para verificar mi identidad",
         "suffix": "(Opcional)"
       },
+      "biometricModal": {
+        "title": "Datos biométricos",
+        "content": {
+          "intro": "Información sobre datos biométricos. ¿Cómo tratamos tus datos personales para los fines comerciales y/o publicitarios?",
+          "subtitle": "A continuación; te informamos de forma directa y transparente ¿Cómo vamos a utilizar tu información personal para dar cumplimiento a las finalidades comerciales y/o publicitarias autorizadas:",
+          "points": [
+            "SANTANDER CONSUMER BANK, con RUC N° 20255993225, se encuentra domiciliado en Av. Paseo de la República 3587 – San Isidro, Lima, ha registrado los bancos de datos de clientes y prospectos de clientes ante la Autoridad Nacional de Protección de Datos Personales del Ministerio de Justicia.",
+            "En SANTANDER CONSUMER BANK recopilamos tus datos personales de las siguientes formas:",
+            "Interacciones directas: Nos proporcionas tus datos al registrarte, usar nuestros servicios, comunicarte con nosotros, participar en encuestas o promociones, o cuando nos contactas para soporte.",
+            "Interacciones automáticas: Recopilamos datos automáticamente cuando usas nuestros servicios, como información de tu dispositivo, dirección IP, tipo de navegador, páginas visitadas, tiempo de permanencia, y patrones de uso.",
+            "Terceros: Podemos recibir información sobre ti de terceros, como redes sociales, servicios de verificación de identidad, y otros proveedores de servicios.",
+            "Utilizamos tus datos personales para:",
+            "Proporcionar y mejorar nuestros servicios bancarios y financieros.",
+            "Verificar tu identidad y prevenir fraudes.",
+            "Cumplir con obligaciones legales y regulatorias.",
+            "Enviarte comunicaciones sobre productos y servicios que puedan ser de tu interés.",
+            "Realizar análisis y estudios de mercado para mejorar nuestros productos.",
+            "Proteger la seguridad de nuestras operaciones y de nuestros clientes.",
+            "Compartimos tu información personal únicamente en los siguientes casos:",
+            "Con tu consentimiento explícito.",
+            "Para cumplir con obligaciones legales o regulatorias.",
+            "Con proveedores de servicios que nos ayudan a operar nuestro negocio (bajo estrictos acuerdos de confidencialidad).",
+            "Para proteger nuestros derechos legales o la seguridad de nuestros servicios.",
+            "Tus datos biométricos (como fotos de tu DNI y selfies) se utilizan exclusivamente para:",
+            "Verificar tu identidad de manera segura.",
+            "Prevenir fraudes y actividades ilegales.",
+            "Cumplir con regulaciones de identificación de clientes (KYC).",
+            "Mantener la seguridad de tu cuenta y transacciones.",
+            "Tienes derecho a:",
+            "Acceder a tus datos personales que tenemos almacenados.",
+            "Rectificar datos inexactos o incompletos.",
+            "Solicitar la eliminación de tus datos (sujeto a obligaciones legales).",
+            "Oponerte al procesamiento de tus datos para fines comerciales.",
+            "Retirar tu consentimiento en cualquier momento.",
+            "Para ejercer estos derechos, puedes contactarnos a través de nuestros canales oficiales.",
+            "Mantenemos tus datos personales solo durante el tiempo necesario para cumplir con los fines para los cuales fueron recopilados, o según lo requiera la ley.",
+            "Implementamos medidas de seguridad técnicas y organizativas para proteger tu información personal contra acceso no autorizado, alteración, divulgación o destrucción.",
+            "Si tienes preguntas sobre esta política de privacidad o sobre el tratamiento de tus datos personales, puedes contactarnos en:",
+            "Email: privacidad@santander.com.pe",
+            "Teléfono: 0800-1-0000",
+            "Dirección: Av. Paseo de la República 3587 – San Isidro, Lima"
+          ]
+        },
+        "agreeButton": "Estoy de acuerdo",
+        "closeButton": "Cerrar"
+      },
       "continueButton": "Continuar"
     },
     "dni-front": {

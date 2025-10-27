@@ -25,6 +25,16 @@
     &__highlight {
       color: #23779a;
       font-weight: 600;
+      
+      &--clickable {
+        cursor: pointer;
+        text-decoration: underline;
+        transition: color 0.2s ease;
+        
+        &:hover {
+          color: #1e5f7a;
+        }
+      }
     }
   }
 }

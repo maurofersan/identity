@@ -8,7 +8,7 @@
     />
     <span class="consent__text">
       {{ textPrefix }}
-      <span class="consent__text__highlight">{{ textHighlight }}</span>
+      <span class="consent__text__highlight consent__text__highlight--clickable" (click)="onBiometricTextClick()">{{ textHighlight }}</span>
       {{ textSuffix }}
     </span>
   </label>

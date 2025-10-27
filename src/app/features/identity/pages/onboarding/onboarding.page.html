@@ -20,6 +20,7 @@
         [textSuffix]="consentSuffix()"
         [checked]="biometricConsent"
         (consentChange)="onConsentChange($event)"
+        (biometricTextClick)="onBiometricTextClick()"
       ></app-consent>
     </main>
 
@@ -31,4 +32,10 @@
       />
     </div>
   </div>
+  
+  <app-biometric-modal
+    [isOpen]="isBiometricModalOpen"
+    (close)="onBiometricModalClose()"
+    (agree)="onBiometricModalAgree()"
+  ></app-biometric-modal>
 </div>
