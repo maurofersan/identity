@@ -33,6 +33,8 @@ import { InstructionItem } from '../../../../shared/interfaces/identity.interfac
 export class OnboardingPageComponent extends BaseComponent implements OnInit {
   biometricConsent = false;
   isBiometricModalOpen = false;
+  private isUpdatingFromModal = false;
+  private previousConsentState = false;
 
   private readonly textService = inject(TextService);
   private readonly identityStore = inject(IdentityStoreService);
@@ -87,8 +89,11 @@ export class OnboardingPageComponent extends BaseComponent implements OnInit {
    * Handles biometric consent change
    */
   onConsentChange(consent: boolean): void {
-    this.biometricConsent = consent;
-    this.identityStore.setBiometricConsent(consent);
+    // Solo actualizar si no viene del modal
+    if (!this.isUpdatingFromModal) {
+      this.biometricConsent = consent;
+      this.identityStore.setBiometricConsent(consent);
+    }
   }
 
   /**
@@ -111,6 +116,10 @@ export class OnboardingPageComponent extends BaseComponent implements OnInit {
    */
   onBiometricTextClick(): void {
     this.isBiometricModalOpen = true;
+    // Guardar el estado actual del checkbox antes de abrir el modal
+    this.previousConsentState = this.biometricConsent;
+    // Resetear la bandera al abrir el modal
+    this.isUpdatingFromModal = false;
   }
 
   /**
@@ -118,6 +127,14 @@ export class OnboardingPageComponent extends BaseComponent implements OnInit {
    */
   onBiometricModalClose(): void {
     this.isBiometricModalOpen = false;
+    // Restaurar el estado anterior del checkbox al cerrar con X
+    this.isUpdatingFromModal = true;
+    this.biometricConsent = this.previousConsentState;
+    this.identityStore.setBiometricConsent(this.previousConsentState);
+    // Resetear la bandera después de un tick
+    setTimeout(() => {
+      this.isUpdatingFromModal = false;
+    }, 0);
   }
 
   /**
@@ -125,5 +142,13 @@ export class OnboardingPageComponent extends BaseComponent implements OnInit {
    */
   onBiometricModalAgree(): void {
     this.isBiometricModalOpen = false;
+    // Se activa el checkbox al hacer clic en "Estoy de acuerdo"
+    this.isUpdatingFromModal = true;
+    this.biometricConsent = true;
+    this.identityStore.setBiometricConsent(true);
+    // Resetear la bandera después de un tick para permitir futuros cambios manuales
+    setTimeout(() => {
+      this.isUpdatingFromModal = false;
+    }, 0);
   }
 }
