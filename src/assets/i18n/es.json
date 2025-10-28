@@ -103,6 +103,10 @@
       "title": "No pudimos validar tu identidad",
       "subtitle": "Vuelve a intentarlo en xx minutos/horas"
     },
+    "maxAttempts": {
+      "title": "Has superado el máximo de intentos",
+      "subtitle": "Acércate a una agencia para continuar con tu proceso"
+    },
     "common": {
       "backButton": "Volver",
       "loading": "Cargando...",

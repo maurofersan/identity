@@ -1,0 +1,19 @@
+<div class="max-attempts-page">
+  <div class="max-attempts-page__container">
+    <div class="max-attempts-page__content">
+      <div class="max-attempts-page__icon">
+        <img src="assets/images/dni.svg" alt="max attempts exceeded" />
+      </div>
+
+      <app-title-section [titlePrefix]="title()"></app-title-section>
+
+      <p class="max-attempts-page__subtitle">{{ subtitle() }}</p>
+    </div>
+
+    <div class="max-attempts-page__footer">
+      <button class="max-attempts-page__button" (click)="navigateBack()">
+        Volver
+      </button>
+    </div>
+  </div>
+</div>

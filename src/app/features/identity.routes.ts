@@ -48,4 +48,11 @@ export const IDENTITY_ROUTES: Routes = [
         (m) => m.VerificationFailedPageComponent
       ),
   },
+  {
+    path: 'max-attempts-exceeded',
+    loadComponent: () =>
+      import('./identity/pages/max-attempts-exceeded/max-attempts-exceeded.page').then(
+        (m) => m.MaxAttemptsExceededPageComponent
+      ),
+  },
 ];
