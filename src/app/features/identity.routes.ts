@@ -55,4 +55,11 @@ export const IDENTITY_ROUTES: Routes = [
         (m) => m.MaxAttemptsExceededPageComponent
       ),
   },
+  {
+    path: 'error',
+    loadComponent: () =>
+      import('./identity/pages/error-page/error-page.page').then(
+        (m) => m.ErrorPageComponent
+      ),
+  },
 ];

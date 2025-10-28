@@ -1,0 +1,19 @@
+<div class="error-page">
+  <div class="error-page__container">
+    <div class="error-page__content">
+      <div class="error-page__icon">
+        <img src="assets/images/dni.svg" alt="error occurred" />
+      </div>
+
+      <app-title-section [titlePrefix]="title()"></app-title-section>
+
+      <p class="error-page__subtitle">{{ subtitle() }}</p>
+    </div>
+
+    <div class="error-page__footer">
+      <button class="error-page__button" (click)="navigateBack()">
+        Volver
+      </button>
+    </div>
+  </div>
+</div>

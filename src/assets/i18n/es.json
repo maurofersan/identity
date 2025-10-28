@@ -107,6 +107,10 @@
       "title": "Has superado el máximo de intentos",
       "subtitle": "Acércate a una agencia para continuar con tu proceso"
     },
+    "error": {
+      "title": "Ups... algo salió mal",
+      "subtitle": "No pudimos cargar la página. Intenta nuevamente en unos minutos."
+    },
     "common": {
       "backButton": "Volver",
       "loading": "Cargando...",
