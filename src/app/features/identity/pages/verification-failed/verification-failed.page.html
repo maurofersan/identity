@@ -1,0 +1,21 @@
+<div class="failed-page">
+  <div class="failed-page__container">
+    <div class="failed-page__content">
+      <div class="failed-page__icon">
+        <img src="assets/images/dni.svg" alt="verification failed" />
+      </div>
+
+      <app-title-section [titlePrefix]="title()"></app-title-section>
+
+      <p class="failed-page__subtitle">{{ subtitle() }}</p>
+    </div>
+
+    <div class="failed-page__footer">
+      <button class="failed-page__button" (click)="navigateBack()">
+        Volver
+      </button>
+    </div>
+  </div>
+</div>
+
+

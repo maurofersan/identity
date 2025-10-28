@@ -99,6 +99,10 @@
     "success": {
       "title": "Validamos tu identidad con éxito"
     },
+    "failed": {
+      "title": "No pudimos validar tu identidad",
+      "subtitle": "Vuelve a intentarlo en xx minutos/horas"
+    },
     "common": {
       "backButton": "Volver",
       "loading": "Cargando...",

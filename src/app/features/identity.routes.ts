@@ -41,4 +41,11 @@ export const IDENTITY_ROUTES: Routes = [
         (m) => m.SuccessPageComponent
       ),
   },
+  {
+    path: 'verification-failed',
+    loadComponent: () =>
+      import('./identity/pages/verification-failed/verification-failed.page').then(
+        (m) => m.VerificationFailedPageComponent
+      ),
+  },
 ];
