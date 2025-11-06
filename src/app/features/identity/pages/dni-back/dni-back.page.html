@@ -1,0 +1,47 @@
+<div class="dni-back-page">
+  <div class="dni-back-page__container">
+    <app-navigation
+      [backButtonText]="backButton()"
+      (backClick)="goBack()"
+    ></app-navigation>
+
+    <main class="dni-back-page__main">
+      <app-title-section
+        [titlePrefix]="titlePrefix()"
+        [titleHighlight]="titleHighlight()"
+        [titleSufix]="titleSuffix()"
+        [showSuccess]="isCaptured"
+        [successTitle]="successTitle()"
+      ></app-title-section>
+      <div class="capture-document">
+        <div class="capture-document__content">
+          <div #identyRef></div>
+        </div>
+      </div>
+
+      <!-- <div class="dni-back-page__camera-container">
+        <app-camera
+          type="dni-back"
+          [isActive]="isCameraActive && !isCaptured"
+          (imageCaptured)="onImageCaptured($event)"
+          (cameraError)="onCameraError($event)"
+        ></app-camera>
+      </div> -->
+    </main>
+
+    @if (errorMessage) {
+    <div class="dni-back-page__error">
+      <p class="dni-back-page__error__message">{{ errorMessage }}</p>
+      <button class="dni-back-page__error__retry" (click)="retryCapture()">
+        {{ retryButton() }}
+      </button>
+      <button
+        class="dni-back-page__error__permissions"
+        (click)="requestPermissions()"
+      >
+        Solicitar Permisos de Cámara
+      </button>
+    </div>
+    }
+  </div>
+</div>

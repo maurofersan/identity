@@ -1,0 +1,203 @@
+$selfie-border-spacing: 1.5rem;
+$selfie-video-padding: 1.5rem;
+$selfie-controls-bottom: 0.5rem;
+$default-controls-bottom: 1.25rem;
+
+.camera {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+
+  &__container {
+    position: relative;
+    width: 90vw;
+    max-width: 20rem;
+    aspect-ratio: 4/3;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    background-color: #000000;
+
+    // Selfie specific styles
+    &--selfie {
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      overflow: visible; // Allow SVG border to be visible
+      background-color: transparent;
+      padding: 0;
+    }
+  }
+
+  // SVG Border for selfie
+  &__container__svg-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__image {
+      width: calc(100% - $selfie-border-spacing);
+      height: calc(100% - $selfie-border-spacing);
+      object-fit: contain;
+    }
+  }
+
+  &__video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    border-radius: 0.75rem;
+
+    &--active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    // Selfie specific video styles
+    &--selfie {
+      border-radius: 50%;
+      // Add padding to create space between video and SVG border
+      // padding: $selfie-video-padding;
+      box-sizing: border-box;
+      // Ensure video doesn't overflow the circular container
+      width: calc(100% - #{$selfie-border-spacing * 2});
+      height: calc(100% - #{$selfie-border-spacing * 2});
+      top: $selfie-border-spacing;
+      left: $selfie-border-spacing;
+    }
+  }
+
+  &__overlay-success {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 128, 53, 0.4);
+    border-radius: 1rem;
+    pointer-events: none;
+    z-index: 2;
+
+    &--selfie {
+      // Match exactly the video circular area
+      border-radius: 50%;
+      // Use the same positioning and sizing as the selfie video
+      // padding: $selfie-video-padding;
+      box-sizing: border-box;
+      width: calc(100% - #{$selfie-border-spacing * 2});
+      height: calc(100% - #{$selfie-border-spacing * 2});
+      top: $selfie-border-spacing;
+      left: $selfie-border-spacing;
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+
+    // DNI specific overlay styles
+    &--dni-front,
+    &--dni-back {
+      .camera__overlay__frame {
+        width: 20rem;
+        height: 12.5rem;
+        border: 0.1875rem solid #ffffff;
+        border-radius: 0.75rem;
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: -0.125rem;
+          left: -0.125rem;
+          right: -0.125rem;
+          bottom: -0.125rem;
+          border: 0.125rem solid #dc3545;
+          border-radius: 0.875rem;
+          z-index: 1;
+        }
+      }
+    }
+
+    // Selfie overlay is handled by SVG border, so we hide this
+    &--selfie {
+      display: none;
+    }
+
+    &__frame {
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  &__controls {
+    position: absolute;
+    bottom: $default-controls-bottom;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3; // Higher than SVG border
+
+    // Selfie specific controls positioning
+    .camera__container--selfie & {
+      bottom: $selfie-controls-bottom;
+    }
+  }
+
+  &__capture-btn {
+    width: 3.75rem;
+    height: 3.75rem;
+    border-radius: 50%;
+    border: 0.1875rem solid #ffffff;
+    background-color: #dc3545;
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+
+    &:hover:not(:disabled) {
+      background-color: #c82333;
+      transform: scale(1.05);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    &__icon {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__instruction {
+    font-size: 1rem;
+    color: #727272;
+    text-align: center;
+    margin: 0;
+    max-width: 18.75rem;
+  }
+
+  &__canvas {
+    display: none;
+  }
+}

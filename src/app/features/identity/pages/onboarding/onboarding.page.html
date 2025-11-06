@@ -1,0 +1,34 @@
+<div class="onboarding-page">
+  <div class="onboarding-page__container">
+    <app-navigation
+      [backButtonText]="backButton()"
+      (backClick)="goBack()"
+    ></app-navigation>
+
+    <main class="onboarding-page__main">
+      <app-title-section
+        [titlePrefix]="titlePrefix()"
+        [titleHighlight]="titleHighlight()"
+        [subtitle]="subtitle()"
+      ></app-title-section>
+
+      <app-instructions [instructions]="instructions()"></app-instructions>
+
+      <app-consent
+        [textPrefix]="consentText()"
+        [textHighlight]="consentHighlight()"
+        [textSuffix]="consentSuffix()"
+        [checked]="biometricConsent"
+        (consentChange)="onConsentChange($event)"
+      ></app-consent>
+    </main>
+
+    <div class="onboarding-page__actions">
+      <std-button
+        class="onboarding-page__continue-btn"
+        (click)="continue()"
+        [label]="continueButton()"
+      />
+    </div>
+  </div>
+</div>
