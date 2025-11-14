@@ -29,6 +29,7 @@
         class="onboarding-page__continue-btn"
         (click)="continue()"
         [label]="continueButton()"
+        [disabled]="!biometricConsent"
       />
     </div>
   </div>

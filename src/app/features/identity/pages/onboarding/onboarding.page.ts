@@ -100,6 +100,9 @@ export class OnboardingPageComponent extends BaseComponent implements OnInit {
    * Continues to the next step
    */
   continue(): void {
+    if (!this.biometricConsent) {
+      return;
+    }
     this.identityStore.setCurrentStep('dni-front');
     this.router.navigate(['/biometria/dni-front']);
   }
